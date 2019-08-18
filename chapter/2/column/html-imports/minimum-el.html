@@ -1,0 +1,22 @@
+<template>
+    <style>
+        p {
+            color: #f0f;
+        }
+    </style>
+    <p>This is a custom element!</p>
+</template>
+<script>
+    class MinimumElement extends HTMLElement {
+        constructor() {
+            super();
+            const shadowRoot = this.attachShadow({mode: 'open'});
+            const minimumEl = document.getElementById('minimum-el').import;
+            const templateNodes = minimumEl.getElementsByTagName('template');
+            const templateNode = templateNodes[0].content.cloneNode(true);
+            shadowRoot.appendChild(templateNode);
+        }
+    }
+
+    customElements.define('minimum-el', MinimumElement);
+</script>
