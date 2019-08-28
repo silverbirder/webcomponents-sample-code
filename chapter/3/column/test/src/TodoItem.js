@@ -115,6 +115,7 @@ export class TodoItem extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     this._text = newValue;
+    this._render();
   }
 
   _render() {
@@ -142,9 +143,10 @@ export class TodoItem extends HTMLElement {
 
   set checked(value) {
     this._checked = Boolean(value);
+    this._render();
   }
 
   get checked() {
-    return this.hasAttribute('checked');
+    return this._checked;
   }
 }
