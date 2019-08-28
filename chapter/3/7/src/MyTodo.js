@@ -39,7 +39,6 @@ export class MyTodo extends HTMLElement {
   }
 
   _render() {
-    if (!this.$listContainer) return;
     this.$listContainer.innerHTML = '';
     this._list.forEach((item, index) => {
       let $item = document.createElement('todo-item');

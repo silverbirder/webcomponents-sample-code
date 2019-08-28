@@ -25,5 +25,9 @@ describe('TodoInput Basic Test', () => {
     setTimeout(() => form.dispatchEvent(new Event('submit')));
     const {detail} = await oneEvent(el, 'onSubmit');
     expect(detail).to.be.equal(inputValue);
+
+    // for no input value
+    setTimeout(() => form.dispatchEvent(new Event('submit')));
+    expect(input.value).to.be.empty
   });
 });
