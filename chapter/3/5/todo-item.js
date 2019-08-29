@@ -92,7 +92,6 @@ class TodoItemElement extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log(`add item 「${this._text}」`);
         this._root.appendChild(template.content.cloneNode(true));
         this.$item = this._root.querySelector('.item');
         this.$text = this._root.querySelector('label');
@@ -123,10 +122,6 @@ class TodoItemElement extends HTMLElement {
 
     get index() {
         return this._index;
-    }
-
-    disconnectedCallback() {
-        console.log(`remove item 「${this._text}」`);
     }
 }
 
