@@ -2,7 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
       <style>
         p {
-          color: #f0f;
+          font-weight: bold;
         }
       </style>
       <p>This is a custom element!</p>
